@@ -1,0 +1,4 @@
+São Paulo,12000000
+Rio de Janeiro,6700000
+Brasília,3000000
+Fortaleza,2500000

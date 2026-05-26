@@ -1,0 +1,17 @@
+[
+    {
+        "nome": "Notebook",
+        "preco": 3500,
+        "categoria": "Eletrônicos"
+    },
+    {
+        "nome": "Cadeira",
+        "preco": 800,
+        "categoria": "Móveis"
+    },
+    {
+        "nome": "Caneca",
+        "preco": 50,
+        "categoria": "Utilidades"
+    }
+]

@@ -1,0 +1,20 @@
+[
+    {
+        "nome": "Notebook",
+        "preco": 3500,
+        "categoria": "Eletrônicos",
+        "preco_com_imposto": 3920.0000000000005
+    },
+    {
+        "nome": "Cadeira",
+        "preco": 800,
+        "categoria": "Móveis",
+        "preco_com_imposto": 896.0000000000001
+    },
+    {
+        "nome": "Caneca",
+        "preco": 50,
+        "categoria": "Utilidades",
+        "preco_com_imposto": 56.00000000000001
+    }
+]
