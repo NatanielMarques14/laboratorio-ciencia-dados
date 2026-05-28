@@ -1,0 +1,163 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans)}
+.wrap{padding:1rem 0}
+.module{margin-bottom:2rem}
+.mod-header{display:flex;align-items:center;gap:10px;margin-bottom:1rem;padding-bottom:.5rem;border-bottom:1.5px solid var(--color-border-secondary)}
+.mod-badge{font-size:12px;font-weight:500;padding:3px 10px;border-radius:20px}
+.mod-title{font-size:17px;font-weight:500;color:var(--color-text-primary)}
+.q-list{display:flex;flex-direction:column;gap:10px}
+.q{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:.85rem 1rem;display:flex;gap:12px;align-items:flex-start}
+.q-num{font-size:12px;font-weight:500;min-width:28px;padding-top:2px;color:var(--color-text-secondary)}
+.q-text{font-size:14px;color:var(--color-text-primary);line-height:1.6}
+.tag{display:inline-block;font-size:11px;padding:1px 7px;border-radius:10px;margin-left:6px;vertical-align:middle}
+.q-text code{font-family:var(--font-mono);font-size:12px;background:var(--color-background-secondary);padding:1px 5px;border-radius:4px}
+
+.m1 .mod-badge{background:#E6F1FB;color:#0C447C}
+.m2a .mod-badge{background:#EAF3DE;color:#27500A}
+.m2b .mod-badge{background:#EEEDFE;color:#3C3489}
+.m2c .mod-badge{background:#FAEEDA;color:#633806}
+.m31 .mod-badge{background:#E1F5EE;color:#085041}
+.m32 .mod-badge{background:#FAECE7;color:#712B13}
+.m33 .mod-badge{background:#FBEAF0;color:#72243E}
+.m34 .mod-badge{background:#EAF3DE;color:#3B6D11}
+.m35 .mod-badge{background:#FCEBEB;color:#791F1F}
+
+.tip{font-size:12px;color:var(--color-text-secondary);margin-top:.3rem;font-style:italic}
+</style>
+
+<div class="wrap">
+
+<div class="module m1">
+  <div class="mod-header">
+    <span class="mod-badge">M 1.2</span>
+    <span class="mod-title">Python Básico — Listas, Funções, Dicts, I/O</span>
+  </div>
+  <div class="q-list">
+    <div class="q"><span class="q-num">Q1</span><div class="q-text">Crie uma lista com 6 números inteiros. Imprima o 2º e o 5º elemento. Com um <code>for</code> e <code>if</code>, imprima apenas os números ímpares com uma mensagem formatada (f-string).</div></div>
+    <div class="q"><span class="q-num">Q2</span><div class="q-text">Escreva uma função <code>soma_impares(lista: list) -&gt; tuple[int, list]</code> que retorne a soma dos números ímpares e a lista com eles. Teste com <code>[3, 8, 7, 2, 11, 6]</code>.</div></div>
+    <div class="q"><span class="q-num">Q3</span><div class="q-text">Crie uma lista de dicionários com pelo menos 4 produtos (<code>nome</code>, <code>preco</code>). Escreva a função <code>media_precos(lista: list) -&gt; float</code> que retorne a média dos preços. Use acumulador <code>+=</code>.</div></div>
+    <div class="q"><span class="q-num">Q4</span><div class="q-text">Usando <code>requests</code> e <code>csv</code>, leia o CSV da URL <code>https://raw.githubusercontent.com/ccalmendra/ciencia-dados/refs/heads/main/dados/m1-pessoas.csv</code>. Extraia a coluna <code>nome</code> e imprima todos os nomes.</div></div>
+    <div class="q"><span class="q-num">Q5</span><div class="q-text">Com o módulo <code>math</code>, calcule: raiz quadrada de 144, fatorial de 6 e o seno de π/2 (90 graus). Imprima cada resultado formatado.</div></div>
+    <div class="q"><span class="q-num">Q6</span><div class="q-text">Com <code>datetime</code> e <code>timedelta</code>: obtenha a data atual, crie uma data para 31/12/2025 e calcule quantos dias faltam. Imprima a data atual formatada como <code>DD/MM/AAAA</code>.</div></div>
+    <div class="q"><span class="q-num">Q7</span><div class="q-text">Com <code>random</code>: gere um inteiro entre 1 e 500, sorteie aleatoriamente 2 elementos de uma lista de 6 frutas com <code>random.choice</code>, embaralhe uma lista <code>[10,20,30,40,50]</code> com <code>shuffle</code> e gere 8 números aleatórios entre 0 e 100 com list comprehension.</div></div>
+    <div class="q"><span class="q-num">Q8</span><div class="q-text">Crie e escreva em <code>cidades.txt</code> pelo menos 4 cidades com população (<code>cidade,populacao</code> por linha). Depois leia o arquivo e imprima: <em>"A população de {cidade} é {pop} habitantes."</em> Use <code>strip()</code> e <code>split()</code>.</div></div>
+    <div class="q"><span class="q-num">Q9</span><div class="q-text">Crie <code>produtos.json</code> com 3 produtos (<code>nome</code>, <code>preco</code>, <code>categoria</code>). Leia o arquivo, adicione a chave <code>preco_com_imposto</code> (preço × 1.12) em cada produto e salve como <code>produtos_atualizados.json</code>. Use <code>json.dump</code> com <code>indent=4</code> e <code>ensure_ascii=False</code>.</div></div>
+  </div>
+</div>
+
+<div class="module m2a">
+  <div class="mod-header">
+    <span class="mod-badge">M 2.1</span>
+    <span class="mod-title">Tipos de Dados — Estruturado, Semi, Não-Estruturado</span>
+  </div>
+  <div class="q-list">
+    <div class="q"><span class="q-num">Q10</span><div class="q-text">Com <code>pandas</code>, carregue o CSV de saúde da URL da revisão. Exiba as 5 primeiras linhas com <code>.head()</code> e as estatísticas básicas com <code>.describe()</code>.</div></div>
+    <div class="q"><span class="q-num">Q11</span><div class="q-text">Com <code>requests</code>, faça uma requisição para <code>https://transparencia.tce.sp.gov.br/api/json/municipios</code>. Converta para Python com <code>.json()</code>, imprima o tipo do objeto retornado e o primeiro elemento.</div></div>
+    <div class="q"><span class="q-num">Q12</span><div class="q-text">Com <code>nltk</code> e <code>Counter</code>, carregue o texto da URL de spam da revisão, tokenize com <code>word_tokenize</code> e imprima as 10 palavras mais frequentes. Use <code>try/except</code> para tratar erros de requisição.</div></div>
+  </div>
+</div>
+
+<div class="module m2b">
+  <div class="mod-header">
+    <span class="mod-badge">M 2.2</span>
+    <span class="mod-title">NumPy — Arrays, Fatiamento, Estatísticas</span>
+  </div>
+  <div class="q-list">
+    <div class="q"><span class="q-num">Q13</span><div class="q-text">Crie um array 1D com 5 elementos, um 2D (3×3) e um 3D (2×2×3). Imprima o <code>.shape</code> de cada um.</div></div>
+    <div class="q"><span class="q-num">Q14</span><div class="q-text">Crie um array 2D (4 alunos × 3 provas) com notas entre 0 e 10. Calcule a média por aluno com <code>axis=1</code> e a média geral. Identifique qual índice de aluno tem a maior média.</div></div>
+    <div class="q"><span class="q-num">Q15</span><div class="q-text">Dado o array <code>[12.0, 18.5, 27.3, 33.0, 5.8]</code> em Celsius, converta todos os valores para Fahrenheit com uma única operação vetorizada (<code>F = C * 9/5 + 32</code>).</div></div>
+    <div class="q"><span class="q-num">Q16</span><div class="q-text">Para o array <code>[200, 220, 215, 210, 205, 225, 230, 240, 235, 250]</code>, calcule com NumPy: média, mediana, desvio padrão, variância e retorne o array ordenado com <code>np.sort</code>.</div></div>
+    <div class="q"><span class="q-num">Q17</span><div class="q-text">Crie uma matriz 4×4 com <code>np.random.randint(1, 101, (4,4))</code>. Extraia: a primeira linha, a terceira coluna e a submatriz 2×2 do canto superior esquerdo. Depois multiplique a segunda coluna por 3 (in-place).</div></div>
+    <div class="q"><span class="q-num">Q18</span><div class="q-text">Crie uma matriz 8×4 aleatória (1 a 50). Calcule média, mediana e desvio padrão por linha com <code>axis=1, keepdims=True</code>. Use <code>np.concatenate</code> para adicionar essas 3 colunas à matriz original e imprima o resultado.</div></div>
+    <div class="q"><span class="q-num">Q19</span><div class="q-text">Crie uma matriz 5×4 aleatória. Insira a linha <code>[99, 88, 77, 66]</code> na posição de índice 2 usando <code>np.insert(..., axis=0)</code>. Imprima a matriz antes e depois.</div></div>
+  </div>
+</div>
+
+<div class="module m2c">
+  <div class="mod-header">
+    <span class="mod-badge">M 2.3</span>
+    <span class="mod-title">Pandas — Series, DataFrame, Filtros, .loc/.iloc</span>
+  </div>
+  <div class="q-list">
+    <div class="q"><span class="q-num">Q20</span><div class="q-text">Crie uma <code>pd.Series</code> com 5 capitais brasileiras como índice e suas populações como valores. Acesse o valor de uma capital pelo nome do índice.</div></div>
+    <div class="q"><span class="q-num">Q21</span><div class="q-text">Crie um DataFrame com 5 funcionários (Nome, Departamento, Salário). Filtre apenas os que têm salário acima da média usando uma máscara booleana (<code>df[df['Salário'] > media]</code>).</div></div>
+    <div class="q"><span class="q-num">Q22</span><div class="q-text">Carregue o CSV de exercícios da revisão e renomeie as colunas. Filtre linhas onde <code>pulso &gt; 100</code> E <code>calorias &gt; 400</code> simultaneamente com <code>&amp;</code>.</div></div>
+    <div class="q"><span class="q-num">Q23</span><div class="q-text">No mesmo DataFrame, use <code>.loc</code> para selecionar as linhas onde <code>pulso &gt; 110</code>, mas exibindo apenas as colunas <code>pulso</code> e <code>calorias</code>.</div></div>
+    <div class="q"><span class="q-num">Q24</span><div class="q-text">Crie uma nova coluna <code>eficiencia</code> no DataFrame de exercícios, calculada como <code>calorias / duracao</code>. Imprima as 5 primeiras linhas com <code>.head()</code>.</div></div>
+    <div class="q"><span class="q-num">Q25</span><div class="q-text">Use <code>.idxmax()</code> para encontrar o índice da linha com maior valor em <code>calorias</code>. Com esse índice, use <code>.loc</code> para imprimir a linha completa. Faça o mesmo para o menor valor com <code>.idxmin()</code>.</div></div>
+    <div class="q"><span class="q-num">Q26</span><div class="q-text">Calcule e imprima: média e mediana de <code>duracao</code> (convertidas para <code>float</code>), soma total de <code>calorias</code>, e o valor máximo e mínimo de <code>pulso max</code>.</div></div>
+    <div class="q"><span class="q-num">Q27</span><div class="q-text">Defina a coluna <code>data</code> como índice do DataFrame de exercícios com <code>set_index</code> e imprima o resultado.</div></div>
+  </div>
+</div>
+
+<div class="module m31">
+  <div class="mod-header">
+    <span class="mod-badge">M 3.1</span>
+    <span class="mod-title">GroupBy, Agregações e Análise Olímpica</span>
+  </div>
+  <div class="q-list">
+    <div class="q"><span class="q-num">Q28</span><div class="q-text">Carregue o CSV de atletas olímpicos. Use <code>groupby("Name")["Event"].count()</code> para contar eventos por atleta. Imprima o nome e a quantidade do atleta com mais eventos (<code>idxmax()</code>).</div></div>
+    <div class="q"><span class="q-num">Q29</span><div class="q-text">Use <code>value_counts()</code> na coluna <code>Sport</code> para contar participações por esporte. Calcule o quartil 25% com <code>.quantile(0.25)</code> e filtre apenas os esportes abaixo desse valor.</div></div>
+    <div class="q"><span class="q-num">Q30</span><div class="q-text">Calcule a média de idade por ano olímpico com <code>groupby("Year")["Age"].mean()</code>. Qual ano teve a maior média? Qual teve a menor?</div></div>
+    <div class="q"><span class="q-num">Q31</span><div class="q-text">Use <code>groupby(["Sex", "Medal"]).size()</code> para contar medalhas por gênero. Aplique <code>.unstack().fillna(0)</code> para transformar em tabela. Plote um gráfico de barras com <code>.plot(kind='bar')</code>.</div></div>
+    <div class="q"><span class="q-num">Q32</span><div class="q-text">Encontre o país (NOC) com mais medalhas totais que nunca ganhou ouro. Use <code>groupby(["NOC","Medal"]).size().unstack(fill_value=0)</code>, filtre onde <code>Gold == 0</code> e use <code>sum(axis=1)</code>. Mostre o top 5.</div></div>
+    <div class="q"><span class="q-num">Q33</span><div class="q-text">Use <code>.agg()</code> para criar um resumo por esporte com: média de <code>Age</code>, quantidade de atletas únicos (<code>ID</code>), altura mínima e máxima (<code>Height</code>). Imprima as 10 primeiras linhas.</div></div>
+  </div>
+</div>
+
+<div class="module m32">
+  <div class="mod-header">
+    <span class="mod-badge">M 3.2</span>
+    <span class="mod-title">Visualização — Histograma, Boxplot, KDE, Scatter, Q-Q</span>
+  </div>
+  <div class="q-list">
+    <div class="q"><span class="q-num">Q34</span><div class="q-text">Plote um histograma da distribuição de idades dos atletas com 40 bins, cor azul e borda preta. Adicione <code>xticks</code> de 5 em 5 entre 0 e 100, rótulos nos eixos e título.</div></div>
+    <div class="q"><span class="q-num">Q35</span><div class="q-text">Plote um boxplot da coluna <code>Height</code> separado por <code>Sex</code> usando <code>df.boxplot</code>. Defina cores personalizadas para <code>boxes</code>, <code>whiskers</code> e <code>medians</code> com o parâmetro <code>color=dict(...)</code>.</div></div>
+    <div class="q"><span class="q-num">Q36</span><div class="q-text">Para os atletas masculinos, calcule Q1, Q3 e IQR da coluna <code>Age</code>. Calcule os limites inferior e superior (fórmula do IQR). Filtre e imprima os outliers superiores e inferiores.</div></div>
+    <div class="q"><span class="q-num">Q37</span><div class="q-text">Com seaborn, plote um KDE plot (<code>sns.kdeplot</code>) da altura dos atletas, separando por sexo com <code>hue='Sex'</code>. Adicione rótulos nos eixos.</div></div>
+    <div class="q"><span class="q-num">Q38</span><div class="q-text">Com seaborn, plote um scatter plot de <code>Height</code> vs <code>Weight</code> com <code>hue='Sex'</code>. Adicione título e rótulos nos eixos.</div></div>
+    <div class="q"><span class="q-num">Q39</span><div class="q-text">Com <code>scipy.stats.probplot</code>, plote o gráfico Q-Q da coluna <code>Age</code> (sem NaNs com <code>.dropna()</code>), comparando com distribuição normal. Adicione grade e título.</div></div>
+    <div class="q"><span class="q-num">Q40</span><div class="q-text">Preencha NaNs de <code>Medal</code> com <code>'No Medal'</code>. Agrupe por <code>["Age", "Medal"]</code> com <code>size().unstack(fill_value=0)</code>. Plote um gráfico de barras empilhado (<code>stacked=True</code>) com <code>figsize=(12,6)</code>.</div></div>
+    <div class="q"><span class="q-num">Q41</span><div class="q-text">Remova NaNs de <code>Weight</code> com <code>dropna(subset=['Weight'])</code>. Plote um boxplot horizontal (<code>orient='h'</code>) do peso por esporte usando <code>sns.boxplot</code> com <code>figsize=(10,20)</code>.</div></div>
+  </div>
+</div>
+
+<div class="module m33">
+  <div class="mod-header">
+    <span class="mod-badge">M 3.3</span>
+    <span class="mod-title">Probabilidade e Frequência</span>
+  </div>
+  <div class="q-list">
+    <div class="q"><span class="q-num">Q42</span><div class="q-text">Calcule a frequência absoluta e a frequência relativa (percentual com <code>normalize=True</code>) da coluna <code>Sport</code>. Imprima os 5 esportes mais frequentes de cada.</div></div>
+    <div class="q"><span class="q-num">Q43</span><div class="q-text">Calcule a probabilidade de um atleta ganhar uma medalha. Use <code>notna()</code> para filtrar medalhistas. Exiba o resultado como percentual com <code>:.2%</code>.</div></div>
+    <div class="q"><span class="q-num">Q44</span><div class="q-text">Escolha um time (ex: <code>'Brazil'</code>). Calcule: P(medalha), P(time), P(medalha ∩ time), P(medalha | time) e P(time | medalha). Use a fórmula de probabilidade condicional P(A|B) = P(A∩B)/P(B).</div></div>
+    <div class="q"><span class="q-num">Q45</span><div class="q-text">Calcule a probabilidade histórica de medalha do Brasil até 2008. Use essa probabilidade para estimar quantas medalhas seriam ganhas em 2012. Compare com o resultado real e imprima a diferença com <code>abs()</code>.</div></div>
+    <div class="q"><span class="q-num">Q46</span><div class="q-text">Calcule a probabilidade de ganhar uma medalha sendo do sexo feminino P(medalha | mulher) e masculino P(medalha | homem). Qual grupo tem maior probabilidade de medalha?</div></div>
+  </div>
+</div>
+
+<div class="module m34">
+  <div class="mod-header">
+    <span class="mod-badge">M 3.4</span>
+    <span class="mod-title">Correlação e Tendência</span>
+  </div>
+  <div class="q-list">
+    <div class="q"><span class="q-num">Q47</span><div class="q-text">Carregue o CSV do Brasileirão da revisão e renomeie as colunas. Plote um scatter de <code>Valores</code> vs <code>Pontuacao</code> com o nome de cada equipe anotado. Adicione a linha de tendência com <code>np.polyfit(..., 1)</code> e <code>np.poly1d</code> em vermelho tracejado.</div></div>
+  </div>
+</div>
+
+<div class="module m35">
+  <div class="mod-header">
+    <span class="mod-badge">M 3.5</span>
+    <span class="mod-title">Análise Completa — Frequência, Scatter, .agg()</span>
+  </div>
+  <div class="q-list">
+    <div class="q"><span class="q-num">Q48</span><div class="q-text">Use <code>value_counts()</code> na coluna <code>Sport</code> e pegue os top 10 com <code>.nlargest(10)</code>. Calcule a frequência relativa de cada um sobre o total de registros. Plote um barplot com seaborn (<code>palette='viridis'</code>, rótulos inclinados 45°).</div></div>
+    <div class="q"><span class="q-num">Q49</span><div class="q-text">Filtre o DataFrame removendo NaNs de <code>Height</code> e <code>Weight</code>. Encontre os 3 esportes com mais atletas válidos com <code>groupby("Sport")["ID"].count().nlargest(3)</code>. Filtre o DataFrame com <code>.isin()</code> e plote um scatter <code>Height</code> vs <code>Weight</code> com <code>hue='Sport'</code>.</div></div>
+    <div class="q"><span class="q-num">Q50</span><div class="q-text">Use <code>.agg()</code> com múltiplas funções para criar um resumo completo por esporte: média de <code>Age</code>, atletas únicos de <code>ID</code>, altura mínima e máxima de <code>Height</code>. Imprima as 10 primeiras linhas do resultado.</div></div>
+  </div>
+</div>
+
+</div>
