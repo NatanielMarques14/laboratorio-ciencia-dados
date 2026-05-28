@@ -1,0 +1,4 @@
+São Paulo,12345678
+Rio de Janeiro,6748000
+Fortaleza,2669342
+Salvador,2872347
